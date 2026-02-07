@@ -4,7 +4,7 @@ date: 2026-01-01 13:32:20 +0300
 categories: [Propulsion, Rocket-Engines]
 tags: [rocket, propulsion, gas-dynamics]
 math: true
-image: /assets/img/Projects/Rocket/Flowchart.png
+image: /assets/img/Projects/Rocket/RocketDiagram.png
 ---
 
 ## Abstract
