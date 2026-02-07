@@ -4,7 +4,7 @@ date: 2026-01-01 00:00:00 +0300
 categories: [Wind turbine]
 tags: [Wind Turbine, Aerodynamics, CFD, ANSYS, QBlade]
 math: true
-image: /assets/img/Projects/Rocket/Blade.png
+image: assets/img/Projects/CAD project/Blade.png
 ---
 
 ## Project Overview: S823 Wind Turbine Blade Design and Analysis
