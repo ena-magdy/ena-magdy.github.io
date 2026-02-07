@@ -5,6 +5,7 @@ categories: [Propulsion, Rocket-Engines]
 tags: [rocket, propulsion, gas-dynamics]
 math: true
 image: /assets/img/Projects/Rocket/RocketDiagram.png
+authors: [<Marina>, <Abido>]
 ---
 
 ## Abstract
