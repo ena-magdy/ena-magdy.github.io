@@ -93,7 +93,7 @@ A MATLAB script was developed to:
 - Analyze mass flow rate variation
 - Evaluate nozzle performance
 
-![MATLAB Results](MatlabRocket.png){: .shadow w="85%" }
+![MATLAB Results](/assets/img/Projects/Rocket/MatlabRocket.png){: .shadow w="85%" }
 
 ---
 
