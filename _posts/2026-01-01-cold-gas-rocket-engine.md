@@ -5,7 +5,6 @@ categories: [Propulsion, Rocket-Engines]
 tags: [rocket, propulsion, gas-dynamics]
 math: true
 image: /assets/img/Projects/Rocket/Flowchart.png
-media_subpath: /assets/img/Projects/Rocket/
 ---
 
 ## Abstract
