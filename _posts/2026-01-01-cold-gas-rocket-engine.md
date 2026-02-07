@@ -35,42 +35,44 @@ The following flowchart illustrates the overall design and analysis workflow:
 
 The mass flow rate through a choked nozzle is given by:
 
-
-\[
+$$
 \dot{m} = A_t P_0 \sqrt{ \frac{\gamma}{R T_0} }
 \left( \frac{2}{\gamma + 1} \right)^{\frac{\gamma + 1}{2(\gamma - 1)}}
-\]
+$$
 
 Where:
-- \( A_t \) : Throat area  
-- \( P_0 \) : Chamber pressure  
-- \( T_0 \) : Chamber temperature  
-- \( \gamma \) : Specific heat ratio  
-- \( R \) : Gas constant  
+- $$ A_t $$ : Throat area  
+- $$ P_0 $$ : Chamber pressure  
+- $$ T_0 $$ : Chamber temperature  
+- $$ \gamma $$ : Specific heat ratio  
+- $$ R $$ : Gas constant  
 
 ---
 
 ### 2. Exit Velocity
 
-\[
-V_e = \sqrt{
+$$
+V_e =
+\sqrt{
 \frac{2 \gamma}{\gamma - 1} R T_0
-\left( 1 - \left( \frac{P_e}{P_0} \right)^{\frac{\gamma - 1}{\gamma}} \right)
+\left(
+1 - \left( \frac{P_e}{P_0} \right)^{\frac{\gamma - 1}{\gamma}}
+\right)
 }
-\]
+$$
 
 ---
 
 ### 3. Thrust Equation
 
-\[
+$$
 F = \dot{m} V_e + (P_e - P_a) A_e
-\]
+$$
 
 Where:
-- \( P_e \) : Exit pressure  
-- \( P_a \) : Ambient pressure  
-- \( A_e \) : Exit area  
+- $$ P_e $$ : Exit pressure  
+- $$ P_a $$ : Ambient pressure  
+- $$ A_e $$ : Exit area  
 
 ---
 
@@ -79,18 +81,20 @@ Where:
 The nozzle was designed as a **converging–diverging (De Laval) nozzle** to ensure choked flow at the throat and supersonic expansion at the exit.
 
 Key design parameters:
-- Expansion ratio
-- Throat diameter
-- Exit Mach number
+
+- Expansion ratio  
+- Throat diameter  
+- Exit Mach number  
 
 ---
 
 ## MATLAB Simulation
 
 A MATLAB script was developed to:
-- Compute thrust vs chamber pressure
-- Analyze mass flow rate variation
-- Evaluate nozzle performance
+
+- Compute thrust vs chamber pressure  
+- Analyze mass flow rate variation  
+- Evaluate nozzle performance  
 
 ![MATLAB Results](/assets/img/Projects/Rocket/MatlabRocket.png){: .shadow w="85%" }
 
@@ -99,9 +103,10 @@ A MATLAB script was developed to:
 ## Results and Discussion
 
 The simulation results show that:
-- Thrust increases linearly with chamber pressure
-- Cold gas systems produce relatively low thrust
-- Efficiency is strongly affected by nozzle expansion ratio
+
+- Thrust increases linearly with chamber pressure  
+- Cold gas systems produce relatively low thrust  
+- Efficiency is strongly affected by nozzle expansion ratio  
 
 Despite the low thrust, the system offers **high reliability and precise controllability**, making it suitable for attitude control systems (ACS).
 
@@ -115,6 +120,6 @@ This project successfully demonstrated the complete design and analysis cycle of
 
 ## References
 
-1. Sutton, G. P., & Biblarz, O. *Rocket Propulsion Elements*
-2. Humble, R. W., Henry, G. N., & Larson, W. J. *Space Propulsion Analysis and Design*
+1. Sutton, G. P., & Biblarz, O. *Rocket Propulsion Elements*  
+2. Humble, R. W., Henry, G. N., & Larson, W. J. *Space Propulsion Analysis and Design*  
 3. NASA Glenn Research Center – Cold Gas Propulsion Systems
