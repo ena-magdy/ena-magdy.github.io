@@ -36,6 +36,7 @@ The following flowchart illustrates the overall design and analysis workflow:
 
 The mass flow rate through a choked nozzle is given by:
 
+
 \[
 \dot{m} = A_t P_0 \sqrt{ \frac{\gamma}{R T_0} }
 \left( \frac{2}{\gamma + 1} \right)^{\frac{\gamma + 1}{2(\gamma - 1)}}
