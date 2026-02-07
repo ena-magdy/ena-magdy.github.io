@@ -38,11 +38,11 @@ social:
   email: s-marina.attallah@zewailcity.edu.eg # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    # https://twitter.com/username # change to your Twitter homepage
-    - https://github.com/ena-magdy # change to your GitHub homepage
+    - https://twitter.com/username # change to your Twitter homepage
+    # - https://github.com/ena-magdy # change to your GitHub homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
-     - https://www.linkedin.com/in/marina-attallah-692a4a290/
+    # - https://www.linkedin.com/in/marina-attallah-692a4a290/
 
 # Site Verification Settings
 webmaster_verifications:
