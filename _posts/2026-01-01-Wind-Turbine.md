@@ -5,6 +5,7 @@ categories: [Wind turbine]
 tags: [Wind Turbine, Aerodynamics, CFD, ANSYS, QBlade]
 math: true
 image: assets/img/Projects/CAD project/Blade.png
+authors: [<Marina>, <Abido>]
 ---
 
 ## Project Overview: S823 Wind Turbine Blade Design and Analysis
