@@ -28,6 +28,9 @@ url: "https://ena-magdy.github.io"
 github:
   username: ena-magdy # change to your GitHub username
 
+twitter:
+  username: twitter_username # change to your Twitter username
+
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
@@ -35,8 +38,8 @@ social:
   email: s-marina.attallah@zewailcity.edu.eg # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    # https://twitter.com/username # change to your Twitter homepage
-    - https://github.com/ena-madgy # change to your GitHub homepage
+     -https://twitter.com/username # change to your Twitter homepage
+     - https://github.com/ena-madgy # change to your GitHub homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
      - https://www.linkedin.com/in/marina-attallah-692a4a290/
