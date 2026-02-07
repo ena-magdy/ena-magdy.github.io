@@ -62,7 +62,7 @@ The project utilizes an unsteady flow model based on the fundamental conservatio
 
 ---
 
-## 1. Isentropic Tank Blowdown
+### 1. Isentropic Tank Blowdown
 
 Pressure update:
 
@@ -88,7 +88,7 @@ $$
 
 ---
 
-## 2. Nozzle Mass Flow Rate (Choked Flow)
+### 2. Nozzle Mass Flow Rate (Choked Flow)
 
 $$
 \dot{m}
@@ -110,7 +110,7 @@ where:
 
 ---
 
-## 3. Rayleigh Flow (Heat Addition)
+### 3. Rayleigh Flow (Heat Addition)
 
 $$
 \frac{P_{02}}{P_{01}}
@@ -124,7 +124,7 @@ $$
 
 ---
 
-## 4. Normal Shock and Exit Conditions
+### 4. Normal Shock and Exit Conditions
 
 $$
 P_{\text{sup}}
@@ -146,7 +146,7 @@ $$
 
 ---
 
-## 5. Propulsion Performance
+### 5. Propulsion Performance
 
 Thrust:
 
@@ -177,7 +177,7 @@ $$
 
 ---
 
-## 6. Combustor Geometry Design
+### 6. Combustor Geometry Design
 
 Low inlet Mach number:
 
