@@ -26,7 +26,7 @@ A cold gas rocket engine operates by expanding a stored pressurized gas through 
 
 The following flowchart illustrates the overall design and analysis workflow:
 
-![Design Flowchart](Flowchart.png){: .shadow w="75%" }
+![Flowchart](/assets/img/Projects/Rocket/Flowchart.png)
 
 ---
 
