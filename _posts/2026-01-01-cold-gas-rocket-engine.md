@@ -9,13 +9,22 @@ image: /assets/img/Projects/Rocket/RocketDiagram.png
 
 ## Abstract
 
-Cold gas propulsion systems are widely used in small spacecraft and attitude control applications due to their simplicity, reliability, and safety. This project focuses on the **design, analysis, and simulation of a cold gas rocket engine**, covering thermodynamic modeling, nozzle design, thrust estimation, and MATLAB-based performance simulation.
+This project involves the comprehensive mathematical modeling, design, and transient performance analysis of a simplified cold gas rocket engine system.
+
+---
+
+**Documentation:**  
+[View full technical report (Google Drive)](https://drive.google.com/file/d/1JaMCLVBxpLGqF0QaDhQRlJG_UjNIgV9N/view?usp=sharing)
 
 ---
 
 ## System Overview
 
-A cold gas rocket engine operates by expanding a stored pressurized gas through a converging–diverging nozzle to generate thrust. Unlike chemical propulsion, no combustion occurs, making the system ideal for precise control maneuvers.
+The engine model consists of three primary components designed to simulate high-performance propulsion:
+
+- **Pressurized Tank:** A 0.5 m³ cold gas tank pressurized with air to an initial pressure of 200 bar.
+- **Combustor (Heat Addition Duct):** A one-dimensional duct that simulates a combustion chamber by adding thermal energy, raising the gas temperature to a maximum of 2200 K.
+- **Convergent–Divergent (CD) Nozzle:** A fixed-geometry nozzle designed at a 100-bar reference condition to optimize mass flow rate and expansion behavior.
 
 ![Rocket Diagram](/assets/img/Projects/Rocket/RocketDiagram.png){: .shadow w="85%" }
 
@@ -29,50 +38,173 @@ The following flowchart illustrates the overall design and analysis workflow:
 
 ---
 
-## Governing Equations
+## Methodology and Physical Modeling
 
-### 1. Mass Flow Rate
+The project utilizes an unsteady flow model based on the fundamental conservation of mass and energy. Key theoretical frameworks include:
 
-The mass flow rate through a choked nozzle is given by:
-
-$$
-\dot{m} = A_t P_0 \sqrt{ \frac{\gamma}{R T_0} }
-\left( \frac{2}{\gamma + 1} \right)^{\frac{\gamma + 1}{2(\gamma - 1)}}
-$$
-
-Where:
-- $$ A_t $$ : Throat area  
-- $$ P_0 $$ : Chamber pressure  
-- $$ T_0 $$ : Chamber temperature  
-- $$ \gamma $$ : Specific heat ratio  
-- $$ R $$ : Gas constant  
+- **Isentropic Blowdown**
+- **Rayleigh Flow**
+- **Shock Logic**
 
 ---
 
-### 2. Exit Velocity
+## Key Performance Results
+
+- **Thrust:** ≈ 8.5 kN  
+- **Mass flow:** ≈ 4 kg/s  
+- **Stagnation pressure loss:** 4.8%  
+- **Shock transition:** ≈ 14 s  
+- **Combustor diameter:** 0.0861 m  
+
+---
+
+# Governing Equations
+
+---
+
+## 1. Isentropic Tank Blowdown
+
+Pressure update:
 
 $$
-V_e =
-\sqrt{
-\frac{2 \gamma}{\gamma - 1} R T_0
+P_{\text{tank}}^{n+1}
+=
+P_{\text{tank}}^{n}
 \left(
-1 - \left( \frac{P_e}{P_0} \right)^{\frac{\gamma - 1}{\gamma}}
+\frac{\rho_{\text{new}}}{\rho_{\text{old}}}
+\right)^{\gamma}
+$$
+
+Temperature update:
+
+$$
+T_{\text{tank}}^{n+1}
+=
+T_{\text{tank}}^{n}
+\left(
+\frac{\rho_{\text{new}}}{\rho_{\text{old}}}
+\right)^{\gamma - 1}
+$$
+
+---
+
+## 2. Nozzle Mass Flow Rate (Choked Flow)
+
+$$
+\dot{m}
+=
+P_0 A^*
+\sqrt{
+\frac{\gamma}{R T_0}
+\left(
+\frac{2}{\gamma + 1}
+\right)^{\frac{\gamma + 1}{\gamma - 1}}
+}
+$$
+
+where:
+
+- $$P_0$$ stagnation pressure  
+- $$T_0$$ stagnation temperature  
+- $$A^*$$ throat area  
+
+---
+
+## 3. Rayleigh Flow (Heat Addition)
+
+$$
+\frac{P_{02}}{P_{01}}
+=
+\frac{1 + \gamma M_2^2}{1 + \gamma M_1^2}
+\left(
+\frac{1 + \frac{\gamma - 1}{2} M_1^2}
+     {1 + \frac{\gamma - 1}{2} M_2^2}
+\right)^{\frac{\gamma - 1}{\gamma}}
+$$
+
+---
+
+## 4. Normal Shock and Exit Conditions
+
+$$
+P_{\text{sup}}
+\left(
+1 + \frac{\gamma + 1}{2\gamma}(M_s^2 - 1)
 \right)
+=
+P_{\text{atm}}
+$$
+
+$$
+M_e
+=
+\sqrt{
+\frac{\gamma M_s^2 - \frac{2}{\gamma - 1}}
+     {1 + \frac{2}{\gamma - 1} M_s^2}
 }
 $$
 
 ---
 
-### 3. Thrust Equation
+## 5. Propulsion Performance
+
+Thrust:
 
 $$
-F = \dot{m} V_e + (P_e - P_a) A_e
+F
+=
+\dot{m} V_e
++
+(P_e - P_{\text{atm}}) A_e
 $$
 
-Where:
-- $$ P_e $$ : Exit pressure  
-- $$ P_a $$ : Ambient pressure  
-- $$ A_e $$ : Exit area  
+Exit velocity:
+
+$$
+V_e
+=
+M_e \sqrt{\gamma R T_e}
+$$
+
+Exit temperature:
+
+$$
+T_e
+=
+\frac{T_0}
+{1 + \frac{\gamma - 1}{2} M_e^2}
+$$
+
+---
+
+## 6. Combustor Geometry Design
+
+Low inlet Mach number:
+
+$$
+M_c = 0.1
+$$
+
+Area:
+
+$$
+A_c
+=
+\frac{\dot{m} \sqrt{T_0}}{P_0}
+\sqrt{\frac{R}{\gamma}}
+\frac{1}{M_c}
+\left(
+1 + \frac{\gamma - 1}{2} M_c^2
+\right)^{\frac{\gamma + 1}{2(\gamma - 1)}}
+$$
+
+Diameter:
+
+$$
+D_c
+=
+\sqrt{\frac{4 A_c}{\pi}}
+$$
 
 ---
 
@@ -80,46 +212,22 @@ Where:
 
 The nozzle was designed as a **converging–diverging (De Laval) nozzle** to ensure choked flow at the throat and supersonic expansion at the exit.
 
-Key design parameters:
-
-- Expansion ratio  
-- Throat diameter  
-- Exit Mach number  
-
 ---
 
 ## MATLAB Simulation
-
-A MATLAB script was developed to:
-
-- Compute thrust vs chamber pressure  
-- Analyze mass flow rate variation  
-- Evaluate nozzle performance  
 
 ![MATLAB Results](/assets/img/Projects/Rocket/MatlabRocket.png){: .shadow w="85%" }
 
 ---
 
-## Results and Discussion
-
-The simulation results show that:
-
-- Thrust increases linearly with chamber pressure  
-- Cold gas systems produce relatively low thrust  
-- Efficiency is strongly affected by nozzle expansion ratio  
-
-Despite the low thrust, the system offers **high reliability and precise controllability**, making it suitable for attitude control systems (ACS).
-
----
-
 ## Conclusion
 
-This project successfully demonstrated the complete design and analysis cycle of a cold gas rocket engine. The analytical model was validated through simulation, and the results align with expected theoretical behavior. Future work may include experimental validation or optimization for different propellants.
+This project successfully demonstrated the complete design and analysis cycle of a cold gas rocket engine. The analytical model was validated through simulation and matched expected theoretical behavior.
 
 ---
 
 ## References
 
-1. Sutton, G. P., & Biblarz, O. *Rocket Propulsion Elements*  
-2. Humble, R. W., Henry, G. N., & Larson, W. J. *Space Propulsion Analysis and Design*  
-3. NASA Glenn Research Center – Cold Gas Propulsion Systems
+1. Sutton & Biblarz — *Rocket Propulsion Elements*  
+2. Humble, Henry & Larson — *Space Propulsion Analysis and Design*  
+3. NASA Glenn Research Center — Cold Gas Propulsion Systems
