@@ -18,7 +18,7 @@ Cold gas propulsion systems are widely used in small spacecraft and attitude con
 
 A cold gas rocket engine operates by expanding a stored pressurized gas through a converging–diverging nozzle to generate thrust. Unlike chemical propulsion, no combustion occurs, making the system ideal for precise control maneuvers.
 
-![Rocket Diagram](RocketDiagram.png){: .shadow w="85%" }
+![Rocket Diagram](/assets/img/Projects/Rocket/RocketDiagram.png){: .shadow w="85%" }
 
 ---
 
@@ -26,7 +26,7 @@ A cold gas rocket engine operates by expanding a stored pressurized gas through 
 
 The following flowchart illustrates the overall design and analysis workflow:
 
-![Flowchart](/assets/img/Projects/Rocket/Flowchart.png)
+![Flowchart](/assets/img/Projects/Rocket/Flowchart.png){: .shadow w="85%" }
 
 ---
 
